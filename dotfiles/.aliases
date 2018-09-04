@@ -1,0 +1,57 @@
+#############
+### Aliases
+#############
+alias vimrc="vi ~/.vimrc"
+alias al="alias"
+alias p="pwd"
+alias pl="pwd & ls -ah"
+alias plugins="cd ~/Sites/mediavine/app/public/wp-content/plugins"
+alias graph="cd ~/Sites/graph/app/public/wp-content/plugins"
+alias pep="code ~/Sites/peppercorn"
+alias kick="kick-off-koa"
+alias pu="git push"
+alias pull="git pull"
+alias fetch="git fetch -a"
+alias bb="git branch"
+alias bb8="git branch -a"
+alias nbranch="git checkout -b"
+alias co="git checkout"
+alias stash="git stash"
+alias pop="git stash pop"
+alias prune="git remote prune origin"
+alias stat="git status"
+alias gd="git diff"
+alias gda="git diff *"
+alias sites="cd ~/Sites"
+alias add="git add"
+alias commit="git commit -m"
+alias yy="yarn"
+alias ys="yarn start"
+alias yb="yarn build"
+alias comi="composer install -o"
+
+alias sprof="source ~/.bash_profile"
+alias vprof="vim ~/.bash_profile"
+alias val="vi ~/.aliases"
+alias vfun="vi ~/.functions"
+
+alias c="clear"
+
+alias clean="phpcbf ."
+
+#################
+### Laravel #####
+#################
+alias art="php artisan"
+
+#################
+### Mediavine ###
+#################
+alias create="cd ~/Sites/create/app/public/wp-content/plugins/mediavine-create"
+alias importers="cd ~/Sites/importers/app/public/wp-content/plugins/mediavine-recipe-importers"
+alias adui="cd admin/ui && yarn && yarn start"
+alias mvupdate="composer install -o && cd admin/ui && yarn && cd ../.."
+alias wpdebug="cd ../../ && tail -f debug.log"
+alias importers2="cd ~/Sites/feastandwest/app/public/wp-content/plugins/mediavine-recipe-importers"
+alias mediavine="cd ~/Sites/mediavine/app/public"
+alias recipe="cd ~/Sites/mediavine/app/public/wp-content/plugins/mediavine-recipe-card"

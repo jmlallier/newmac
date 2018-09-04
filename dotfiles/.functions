@@ -1,0 +1,56 @@
+# Make directory and enter it
+function mkd () {
+  mkdir -p "$@" && cd "$_";
+}
+
+# Open a specified dir/file in the defined Editor (defaults to current directory)
+function edit () {
+  if [ ! $# -eq 0 ]; then
+    ${EDITOR} $@
+      if [ -d $@ ]; then
+        cd $@
+      fi
+  else
+    ${EDITOR} .
+  fi
+}
+
+# Make a branch and switch to it
+function nb () {
+  BRANCH=$1
+  git checkout -b $BRANCH
+  git push --set-upstream origin $BRANCH
+}
+
+function gc {
+  git add --all :/
+  git commit -m $*
+}
+
+function git_clean_branches {
+  git branch --merged master | grep -v "master" | grep -v "^\*" | xargs -n 1  bash -c 'git branch -D $@ && git push origin $@ 2> /dev/null' bash
+}
+
+alias gcl=git_clean_branches
+
+function git_dig {
+  git log --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%Creset - %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=short -G"$1" -- $2
+}
+
+function clone {
+
+  if [ ! $1 -eq 0 ]; then
+    REPO=$1
+  else
+    echo "You must include a repo"
+    exit 1
+  fi
+  if [ ! $2 -eq 0 ]; then
+    DIR=$2
+  else
+    DIR=""
+  fi
+  if [ ! $# -eq 0 ]; then
+    git clone git@github.com:"$REPO".git "$DIR"
+  fi
+}
