@@ -41,9 +41,9 @@ brew bundle install
 
 brew cleanup
 
-composer global require laravel/valet laravel/installer squizlabs/php_codesniffer phpunit/phpunit
+composer global require laravel/valet laravel/installer squizlabs/php_codesniffer
 
-cp .aliases ${HOME}/.aliases
-cp .aliases ${HOME}/.functions
-cp .aliases ${HOME}/.bash_profile
+cp ./dotfiles/.aliases ${HOME}/.aliases
+cp ./dotfiles/.aliases ${HOME}/.functions
+cp ./dotfiles/.aliases ${HOME}/.bash_profile
 source ${HOME}/.bash_profile
